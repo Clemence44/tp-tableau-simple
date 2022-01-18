@@ -1,5 +1,8 @@
 <?php
+
     session_start();
+
+    if(!isset($_SESSION["pair_random_numbers"])){
 
     // 1- Créer un tableau d’entier allant de 0 à 41 en PHP en une seule ligne
     $numbers = range(0, 41);
@@ -17,6 +20,14 @@
     shuffle($pair_random_numbers);
 
     //6- Parcourir ce tableau pour afficher les images (ex:1.jpg)
+        $_SESSION["pair_random_numbers"] = $pair_random_numbers;
+
         //-> jeux.php
+
+    // ...suite
+        $_SESSION["tuile"] = -1;
+        //-> tableau-simple2.php
+
+}
 
 ?>

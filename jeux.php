@@ -123,12 +123,17 @@ $(document).ready(function(){
 <body>
 	<?php  include('tableau-simple.php'); ?>
 	<div class="container">
-		<?php foreach($pair_random_numbers as $number){ ?>
-            <div><img width="80" src="images/<?=$number?>.jpg"></div>
+		<?php foreach($_SESSION["pair_random_numbers"] as $number){ ?>
+            <div><a href="tableau-simple-2.php?number=<?= $number ?>"><img width="80" src="images/<?=$number?>.jpg"></a></div>
+        <?php } ?>
+
+		<?php if (count($_SESSION["pair_random_numbers"]) == 0 ){ ?>
+            <p>C'est gagné !</p>
         <?php } ?>
 	</div>
 	<br><br>
 	<div id="demo"><button id="btnTricher">Tricher</button></div>
+	<a href="tableau-simple-2.php?init=true">Réinitialiser</a>
 
 </body>
 </html>
