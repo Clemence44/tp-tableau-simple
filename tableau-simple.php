@@ -25,7 +25,7 @@
         //-> jeux.php
 
     // ...suite
-        $_SESSION["tuile"] = -1;
+        $_SESSION["tuile"] = ["number" => -1, "index" => 0];
         //-> tableau-simple2.php
 
 }

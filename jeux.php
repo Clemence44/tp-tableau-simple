@@ -123,8 +123,8 @@ $(document).ready(function(){
 <body>
 	<?php  include('tableau-simple.php'); ?>
 	<div class="container">
-		<?php foreach($_SESSION["pair_random_numbers"] as $number){ ?>
-            <div><a href="tableau-simple-2.php?number=<?= $number ?>"><img width="80" src="images/<?=$number?>.jpg"></a></div>
+		<?php foreach($_SESSION["pair_random_numbers"] as $i => $number){ ?>
+            <div><a href="tableau-simple-2.php?number=<?= $number ?>&index=<?= $i ?>"><img width="80" src="images/<?=$number?>.jpg"></a></div>
         <?php } ?>
 
 		<?php if (count($_SESSION["pair_random_numbers"]) == 0 ){ ?>
